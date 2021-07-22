@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <div class="container">
+        <h1>Cadastre-se Conosco</h1>
+        <hr>
+        <form method="POST" action="" class="border mt-5 p-5">
+            {{ form_cadastro.csrf_token }}
+            <legend>Cadastre-se</legend>
+            <hr>
+                <fieldset>
+                    <div class="form-group">
+                        {{ form_cadastro.username.label(class="form-control-label") }}
+                            {% if form_cadastro.username.errors %}
+                                    {{ form_cadastro.username(class="form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for erro in form_cadastro.username.errors %}
+                                        {{ erro }}
+                                    {% endfor %}
+                                </div>
+                                {% else %}
+                                    {{ form_cadastro.username(class="form-control") }}
+                            {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form_cadastro.email.label(class="form-control-label") }}
+                            {% if form_cadastro.email.errors %}
+                                {{ form_cadastro.email(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for erro in form_cadastro.email.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ form_cadastro.email(class="form-control") }}
+                            {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form_cadastro.cpf.label(class="form-control-label") }}
+                            {% if form_cadastro.cpf.errors %}
+                                {{ form_cadastro.cpf(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for erro in form_cadastro.cpf.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ form_cadastro.cpf(class="form-control") }}
+                            {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form_cadastro.data_nascimento.label(class="form-control-label") }}
+                        {% if form_cadastro.data_nascimento.errors %}
+                                {{ form_cadastro.data_nascimento(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for erro in form_cadastro.data_nascimento.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ form_cadastro.data_nascimento(class="form-control") }}
+                            {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form_cadastro.telefone.label(class="form-control-label") }}
+                            {% if form_cadastro.telefone.errors %}
+                                {{ form_cadastro.telefone(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for erro in form_cadastro.telefone.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ form_cadastro.telefone(class="form-control") }}
+                            {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form_cadastro.endereco.label(class="form-control-label") }}
+                            {% if form_cadastro.endereco.errors %}
+                                {{ form_cadastro.endereco(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for erro in form_cadastro.endereco.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ form_cadastro.endereco(class="form-control") }}
+                            {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form_cadastro.senha.label(class="form-control-label") }}
+                            {% if form_cadastro.senha.errors %}
+                                {{ form_cadastro.senha(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for erro in form_cadastro.senha.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ form_cadastro.senha(class="form-control") }}
+                            {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form_cadastro.confirmacao_senha.label(class="form-control-label") }}
+                            {% if form_cadastro.confirmacao_senha.errors %}
+                                {{ form_cadastro.confirmacao_senha(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for erro in form_cadastro.confirmacao_senha.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ form_cadastro.confirmacao_senha(class="form-control") }}
+                            {% endif %}
+                    </div>
+                    <legend class="mt-5">Informações Profissionais</legend>
+                    <hr>
+                    <div class="form-group">
+                        {{ form_cadastro.profissao.label(class="form-control-label") }}
+                            {% if form_cadastro.profissao.errors %}
+                                {{ form_cadastro.profissao(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for erro in form_cadastro.profissao.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ form_cadastro.profissao(class="form-control") }}
+                            {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form_cadastro.numero_registro.label(class="form-control-label") }}
+                            {% if form_cadastro.numero_registro.errors %}
+                                {{ form_cadastro.numero_registro(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for erro in form_cadastro.numero_registro.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ form_cadastro.numero_registro(class="form-control") }}
+                            {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form_cadastro.area_atuacao.label(class="form-control-label") }}
+                            {% if form_cadastro.area_atuacao.errors %}
+                                {{ form_cadastro.area_atuacao(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for erro in form_cadastro.area_atuacao.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ form_cadastro.area_atuacao(class="form-control") }}
+                            {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form_cadastro.especialidades.label(class="form-control-label") }}
+                            {% if form_cadastro.especialidades.errors %}
+                                {{ form_cadastro.especialidades(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for erro in form_cadastro.especialidades.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ form_cadastro.especialidades(class="form-control") }}
+                            {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form_cadastro.deslocamento.label(class="form-control-label") }}
+                            {% if form_cadastro.deslocamento.errors %}
+                                {{ form_cadastro.deslocamento(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for erro in form_cadastro.deslocamento.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ form_cadastro.deslocamento(class="form-control") }}
+                            {% endif %}
+                    </div>
+                </fieldset>
+            {{ form_cadastro.botao_submit_cadastro(class="btn btn-primary mt-4") }}
+        </form>
+    </div>
+
+{% endblock %}

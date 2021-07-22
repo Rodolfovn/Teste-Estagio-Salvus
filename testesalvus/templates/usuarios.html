@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+        <div class="container">
+            <h1>Usuários</h1>
+            {% for usuario in lista_usuarios %}
+                <div class="container">
+                    <div class="main-body">
+                          <div class="row gutters-sm">
+                            <div class="col-md-4 mb-3">
+                              <div class="card">
+                                <div class="card-body">
+                                  <div class="d-flex flex-column align-items-center text-center">
+                                    <img src="{{ url_for('static', filename='fotos_perfil/{}'.format(usuario.foto_perfil)) }}" alt="Admin" class="rounded-circle" width="150">
+                                    <div class="mt-3">
+                                      <h4>{{ usuario.username }}</h4>
+                                      <p class="text-secondary mb-1">{{ usuario.profissao }}</p>
+                                      <p class="text-secondary mb-1">{{ usuario.email }}</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+{% endblock %}

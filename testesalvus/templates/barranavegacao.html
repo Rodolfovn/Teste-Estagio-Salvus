@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid container">
+    <a class="navbar-brand" href="{{ url_for('home') }}">
+      <img src="https://www.salvus.me/_next/static/images/COMMON-salvus_logo_x-5e92dcb24edc3aecf3001a1aa9499906.svg"
+           width="120" height="40"></a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ url_for('sobre_nos') }}">Sobre Nós</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" href="{{ url_for('contato') }}">Contato</a>
+        </li>
+      </ul>
+      <ul class="d-flex navbar-nav">
+        {% if current_user.is_authenticated %}
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('perfil') }}">Meu Perfil</a>
+          </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('usuarios') }}">Usuários</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('sair') }}">Sair</a>
+          </li>
+        {% else %}
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+          </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('cadastro') }}">Cadastre-se Conosco</a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
